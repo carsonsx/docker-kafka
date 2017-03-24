@@ -1,4 +1,4 @@
-FROM java
+FROM java:8
 
 MAINTAINER carsonsx <carsonsx@qq.com>
 
@@ -6,6 +6,8 @@ MAINTAINER carsonsx <carsonsx@qq.com>
 COPY kafka /usr/local/kafka
 
 WORKDIR /usr/local/kafka
+
+EXPOSE 9092 7203
 
 ENTRYPOINT ["bin/kafka-server-start.sh", "config/server.properties"]
 
